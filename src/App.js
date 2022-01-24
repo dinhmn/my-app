@@ -1,5 +1,5 @@
-// import "./App.css";
-import Card from "./components/card/Card";
+import "./App.css";
+import Card2 from "./components/card/Card2";
 import CardList from "./components/card/CardList";
 import { GlobalStyles } from "./GlobalStyles";
 // import Button from "./components/button/Button";
@@ -8,11 +8,18 @@ import { GlobalStyles } from "./GlobalStyles";
 // import Toggle from "./components/state/Toggle";
 // import Counter from "./components/counter/Counter";
 // import Game from "./components/tictactoe/Game";
-
+import { ThemeProvider } from "styled-components";
+import CardTailwind from "./components/card/CardTailwind";
+const theme = {
+  colors: {
+    blue: "#2979ff",
+  },
+};
 function App() {
   return (
     <div>
-      <GlobalStyles></GlobalStyles>
+      {/* <ThemeProvider theme={theme}>
+      <GlobalStyles></GlobalStyles> */}
       {/* <YoutubeItem
         avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsDV5gcH88iuaHC7RmmY6tE3qebzUnHldcw&usqp=CAU"
         image="https://superpower.vn/uploads/details/2021/06/images/43.jpg"
@@ -37,13 +44,12 @@ function App() {
       {/* <Button>Primary</Button>
       <Button secondary>Secondary</Button> */}
 
+      {/* <CardList>
+        <Card2></Card2>
+      </CardList>
+    </ThemeProvider> */}
       <CardList>
-        <Card secondary={true}></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        <CardTailwind></CardTailwind>
       </CardList>
     </div>
   );
