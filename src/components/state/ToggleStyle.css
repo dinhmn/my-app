@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+/* remove animation for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.toggle {
+  width: 100px;
+  height: 50px;
+  background-color: #ccc;
+  padding: 5px;
+  border-radius: 100rem;
+  margin: 25px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.toggle.active {
+  background-color: #e62682;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 100rem;
+  transition: all 0.2s linear;
+}
+.spinner.active {
+  transform: translateX(50px);
+}
+.toggle-control {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0 10px;
+  margin: 25px;
+}
+.toggle-control > * {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+}

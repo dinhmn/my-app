@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+// import "./App.css";
+import Card from "./components/card/Card";
+import CardList from "./components/card/CardList";
+import { GlobalStyles } from "./GlobalStyles";
+// import Button from "./components/button/Button";
+
+// import YoutubeItem from "./components/youtube/YoutubeItem";
+// import Toggle from "./components/state/Toggle";
+// import Counter from "./components/counter/Counter";
+// import Game from "./components/tictactoe/Game";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <GlobalStyles></GlobalStyles>
+      {/* <YoutubeItem
+        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsDV5gcH88iuaHC7RmmY6tE3qebzUnHldcw&usqp=CAU"
+        image="https://superpower.vn/uploads/details/2021/06/images/43.jpg"
+        title="Learn ReactJS"
+        author="Easy"
+      />
+      <YoutubeItem
+        avatar="https://images.foody.vn/res/g103/1023259/prof/s576x330/foody-upload-api-foody-mobile-cafefddaqk-200514103514.jpg"
+        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToLv3Rs05xlH_SlfPhMY7iZ7HVlziYuE8R6A&usqp=CAU"
+        title="Americano"
+        author="Coffee"
+      />
+      <YoutubeItem
+        avatar="https://simpleweb.vn/wp-content/uploads/2020/07/1522697270446.jpg"
+        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSRt-qGly-tzApjQEtKjwKhunup0ReUEh76af2ehWJA8rAS4nzpEBoXJxuFtnGWFTrRI&usqp=CAU"
+        title="Who is this?"
+        author="Nam"
+      /> */}
+      {/* <Toggle />
+      <Counter /> */}
+      {/* <Game /> */}
+      {/* <Button>Primary</Button>
+      <Button secondary>Secondary</Button> */}
+
+      <CardList>
+        <Card secondary={true}></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+      </CardList>
     </div>
   );
 }
