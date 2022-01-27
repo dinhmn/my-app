@@ -10,6 +10,7 @@ import { GlobalStyles } from "./GlobalStyles";
 // import Game from "./components/tictactoe/Game";
 import { ThemeProvider } from "styled-components";
 import CardTailwind from "./components/card/CardTailwind";
+import Photos from "./components/photo/Photos";
 const theme = {
   colors: {
     blue: "#2979ff",
@@ -48,9 +49,10 @@ function App() {
         <Card2></Card2>
       </CardList>
     </ThemeProvider> */}
-      <CardList>
+      {/* <CardList>
         <CardTailwind></CardTailwind>
-      </CardList>
+      </CardList> */}
+      <Photos></Photos>
     </div>
   );
 }
