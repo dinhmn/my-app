@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 const getRandomPhotos = async (page) => {
@@ -20,7 +20,10 @@ const Photos = () => {
   //   }, []);
   const [randomPhotos, setRandomPhotos] = useState([]);
   const [nextPage, setNextPage] = useState(1);
-  const handleLoadMorePhotos = async () => {
+
+  const handleLoadMorePhotos = useRef({});
+
+  handleLoadMorePhotos.current = async () => {
     const images = await getRandomPhotos(nextPage);
     const newPhotos = [...randomPhotos, ...images];
     // concat => nối 2 chuỗi với nhau
@@ -29,7 +32,7 @@ const Photos = () => {
   };
   useEffect(() => {
     //side-effect
-    handleLoadMorePhotos();
+    handleLoadMorePhotos.current();
   }, []);
   return (
     <div>
@@ -51,7 +54,7 @@ const Photos = () => {
       <div className="text-center">
         <button
           className="inline-block px-8 py-4 bg-purple-600 text-white"
-          onClick={handleLoadMorePhotos}
+          onClick={handleLoadMorePhotos.current}
         >
           Load more
         </button>

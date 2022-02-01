@@ -1,21 +1,27 @@
 import "./App.css";
-import Card2 from "./components/card/Card2";
-import CardList from "./components/card/CardList";
-import { GlobalStyles } from "./GlobalStyles";
+// import Card2 from "./components/card/Card2";
+// import CardList from "./components/card/CardList";
+// import { GlobalStyles } from "./GlobalStyles";
 // import Button from "./components/button/Button";
 
 // import YoutubeItem from "./components/youtube/YoutubeItem";
 // import Toggle from "./components/state/Toggle";
 // import Counter from "./components/counter/Counter";
 // import Game from "./components/tictactoe/Game";
-import { ThemeProvider } from "styled-components";
-import CardTailwind from "./components/card/CardTailwind";
-import Photos from "./components/photo/Photos";
-const theme = {
-  colors: {
-    blue: "#2979ff",
-  },
-};
+// import { ThemeProvider } from "styled-components";
+// import CardTailwind from "./components/card/CardTailwind";
+// import Photos from "./components/photo/Photos";
+// import Counter from "./components/counter/Counter";
+// import Timer from "./components/Timer";
+// import Header from "./components/Header";
+import HackerNews from "./components/news/HackerNews";
+import HackerNewsButton from "./components/news/HackerNewsButton";
+import HackerNewsWithReducer from "./components/news/HackerNewsWithReducer";
+// const theme = {
+//   colors: {
+//     blue: "#2979ff",
+//   },
+// };
 function App() {
   return (
     <div>
@@ -44,7 +50,6 @@ function App() {
       {/* <Game /> */}
       {/* <Button>Primary</Button>
       <Button secondary>Secondary</Button> */}
-
       {/* <CardList>
         <Card2></Card2>
       </CardList>
@@ -52,7 +57,12 @@ function App() {
       {/* <CardList>
         <CardTailwind></CardTailwind>
       </CardList> */}
-      <Photos></Photos>
+      {/* <Photos></Photos> */}
+      {/* <Counter></Counter> */}
+      {/* <Timer></Timer> */}
+      {/* <Header></Header> */}
+      {/* <HackerNews></HackerNews> */}
+      <HackerNewsWithReducer></HackerNewsWithReducer>
     </div>
   );
 }
