@@ -22,6 +22,7 @@ import HackerNewsWithReducer from "./components/news/HackerNewsWithReducer";
 import StopWatch from "./components/StopWatch";
 import TimerRef from "./components/StopWatch";
 import TextAreaAutoResize from "./components/TextAreaAutoResize";
+import TextAreaAutoResizeWithReducer from "./components/TextAreaAutoResizeWithReducer";
 // const theme = {
 //   colors: {
 //     blue: "#2979ff",
@@ -74,6 +75,7 @@ function App() {
       <div className="p-5">
         <Dropdown></Dropdown>
       </div>
+      <TextAreaAutoResizeWithReducer></TextAreaAutoResizeWithReducer>
     </div>
   );
 }
