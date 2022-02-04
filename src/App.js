@@ -1,4 +1,6 @@
 import "./App.css";
+import Dropdown from "./components/Dropdown";
+import Input from "./components/Input";
 // import Card2 from "./components/card/Card2";
 // import CardList from "./components/card/CardList";
 // import { GlobalStyles } from "./GlobalStyles";
@@ -17,6 +19,9 @@ import "./App.css";
 import HackerNews from "./components/news/HackerNews";
 import HackerNewsButton from "./components/news/HackerNewsButton";
 import HackerNewsWithReducer from "./components/news/HackerNewsWithReducer";
+import StopWatch from "./components/StopWatch";
+import TimerRef from "./components/StopWatch";
+import TextAreaAutoResize from "./components/TextAreaAutoResize";
 // const theme = {
 //   colors: {
 //     blue: "#2979ff",
@@ -62,7 +67,13 @@ function App() {
       {/* <Timer></Timer> */}
       {/* <Header></Header> */}
       {/* <HackerNews></HackerNews> */}
-      <HackerNewsWithReducer></HackerNewsWithReducer>
+      {/* <HackerNewsWithReducer></HackerNewsWithReducer> */}
+      <StopWatch></StopWatch>
+      <Input></Input>
+      <TextAreaAutoResize></TextAreaAutoResize>
+      <div className="p-5">
+        <Dropdown></Dropdown>
+      </div>
     </div>
   );
 }
