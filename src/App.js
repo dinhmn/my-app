@@ -16,19 +16,19 @@ import Input from "./components/Input";
 // import Counter from "./components/counter/Counter";
 // import Timer from "./components/Timer";
 // import Header from "./components/Header";
-import HackerNews from "./components/news/HackerNews";
-import HackerNewsButton from "./components/news/HackerNewsButton";
-import HackerNewsWithReducer from "./components/news/HackerNewsWithReducer";
+import HackerNewsWithHook from "./components/news/HackerNewsWithHook";
+import SidebarMenu from "./components/SidebarMenu";
 import StopWatch from "./components/StopWatch";
-import TimerRef from "./components/StopWatch";
 import TextAreaAutoResize from "./components/TextAreaAutoResize";
 import TextAreaAutoResizeWithReducer from "./components/TextAreaAutoResizeWithReducer";
+import useClickOutSide from "./hooks/useClickOutSide";
 // const theme = {
 //   colors: {
 //     blue: "#2979ff",
 //   },
 // };
 function App() {
+  const { show, nodeRef, setShow } = useClickOutSide("button");
   return (
     <div>
       {/* <ThemeProvider theme={theme}>
@@ -76,6 +76,20 @@ function App() {
         <Dropdown></Dropdown>
       </div>
       <TextAreaAutoResizeWithReducer></TextAreaAutoResizeWithReducer>
+
+      <div className="block text-center">HackerNewsWithHook</div>
+      <HackerNewsWithHook></HackerNewsWithHook>
+
+      <div>
+        <button
+          onClick={() => setShow(true)}
+          className="inline-block m-3 p-3 rounded-lg text-white bg-green-400"
+        >
+          Show menu
+        </button>
+        <SidebarMenu show={show} ref={nodeRef}></SidebarMenu>
+        <Dropdown></Dropdown>
+      </div>
     </div>
   );
 }
