@@ -8,15 +8,28 @@ const HackerNews = () => {
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const handleFetchData = useRef({});
+
+  const isMounted = useRef(true);
+
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
   handleFetchData.current = async () => {
     setLoading(true);
     try {
       const response = await axios.get(
         `https://hn.algolia.com/api/v1/search?query=${query}`
       );
-      console.log(response.data.hits);
-      setHits(response.data?.hits || []);
-      setLoading(false);
+      setTimeout(() => {
+        if (isMounted.current) {
+          setHits(response.data?.hits || []);
+          setLoading(false);
+        }
+      }, 3000);
+      // console.log(response.data.hits);
     } catch (error) {
       setLoading(false);
       setErrorMessage(`The error happend ${error}`);
