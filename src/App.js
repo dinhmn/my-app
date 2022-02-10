@@ -1,6 +1,7 @@
 import "./App.css";
 import Dropdown from "./components/Dropdown";
 import Input from "./components/Input";
+import Form from "./components/form/Form";
 // import Card2 from "./components/card/Card2";
 // import CardList from "./components/card/CardList";
 // import { GlobalStyles } from "./GlobalStyles";
@@ -30,67 +31,70 @@ import useClickOutSide from "./hooks/useClickOutSide";
 function App() {
   const { show, nodeRef, setShow } = useClickOutSide("button");
   return (
-    <div>
-      {/* <ThemeProvider theme={theme}>
-      <GlobalStyles></GlobalStyles> */}
-      {/* <YoutubeItem
-        avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsDV5gcH88iuaHC7RmmY6tE3qebzUnHldcw&usqp=CAU"
-        image="https://superpower.vn/uploads/details/2021/06/images/43.jpg"
-        title="Learn ReactJS"
-        author="Easy"
-      />
-      <YoutubeItem
-        avatar="https://images.foody.vn/res/g103/1023259/prof/s576x330/foody-upload-api-foody-mobile-cafefddaqk-200514103514.jpg"
-        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToLv3Rs05xlH_SlfPhMY7iZ7HVlziYuE8R6A&usqp=CAU"
-        title="Americano"
-        author="Coffee"
-      />
-      <YoutubeItem
-        avatar="https://simpleweb.vn/wp-content/uploads/2020/07/1522697270446.jpg"
-        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSRt-qGly-tzApjQEtKjwKhunup0ReUEh76af2ehWJA8rAS4nzpEBoXJxuFtnGWFTrRI&usqp=CAU"
-        title="Who is this?"
-        author="Nam"
-      /> */}
-      {/* <Toggle />
-      <Counter /> */}
-      {/* <Game /> */}
-      {/* <Button>Primary</Button>
-      <Button secondary>Secondary</Button> */}
-      {/* <CardList>
-        <Card2></Card2>
-      </CardList>
-    </ThemeProvider> */}
-      {/* <CardList>
-        <CardTailwind></CardTailwind>
-      </CardList> */}
-      {/* <Photos></Photos> */}
-      {/* <Counter></Counter> */}
-      {/* <Timer></Timer> */}
-      {/* <Header></Header> */}
-      {/* <HackerNews></HackerNews> */}
-      {/* <HackerNewsWithReducer></HackerNewsWithReducer> */}
-      <StopWatch></StopWatch>
-      <Input></Input>
-      <TextAreaAutoResize></TextAreaAutoResize>
-      <div className="p-5">
-        <Dropdown></Dropdown>
-      </div>
-      <TextAreaAutoResizeWithReducer></TextAreaAutoResizeWithReducer>
-
-      <div className="block text-center">HackerNewsWithHook</div>
-      <HackerNewsWithHook></HackerNewsWithHook>
-
+    <>
       <div>
-        <button
-          onClick={() => setShow(true)}
-          className="inline-block m-3 p-3 rounded-lg text-white bg-green-400"
-        >
-          Show menu
-        </button>
-        <SidebarMenu show={show} ref={nodeRef}></SidebarMenu>
-        <Dropdown></Dropdown>
+        {/* <ThemeProvider theme={theme}>
+    <GlobalStyles></GlobalStyles> */}
+        {/* <YoutubeItem
+      avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsDV5gcH88iuaHC7RmmY6tE3qebzUnHldcw&usqp=CAU"
+      image="https://superpower.vn/uploads/details/2021/06/images/43.jpg"
+      title="Learn ReactJS"
+      author="Easy"
+    />
+    <YoutubeItem
+      avatar="https://images.foody.vn/res/g103/1023259/prof/s576x330/foody-upload-api-foody-mobile-cafefddaqk-200514103514.jpg"
+      image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToLv3Rs05xlH_SlfPhMY7iZ7HVlziYuE8R6A&usqp=CAU"
+      title="Americano"
+      author="Coffee"
+    />
+    <YoutubeItem
+      avatar="https://simpleweb.vn/wp-content/uploads/2020/07/1522697270446.jpg"
+      image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSRt-qGly-tzApjQEtKjwKhunup0ReUEh76af2ehWJA8rAS4nzpEBoXJxuFtnGWFTrRI&usqp=CAU"
+      title="Who is this?"
+      author="Nam"
+    /> */}
+        {/* <Toggle />
+    <Counter /> */}
+        {/* <Game /> */}
+        {/* <Button>Primary</Button>
+    <Button secondary>Secondary</Button> */}
+        {/* <CardList>
+      <Card2></Card2>
+    </CardList>
+  </ThemeProvider> */}
+        {/* <CardList>
+      <CardTailwind></CardTailwind>
+    </CardList> */}
+        {/* <Photos></Photos> */}
+        {/* <Counter></Counter> */}
+        {/* <Timer></Timer> */}
+        {/* <Header></Header> */}
+        {/* <HackerNews></HackerNews> */}
+        {/* <HackerNewsWithReducer></HackerNewsWithReducer> */}
+        <StopWatch></StopWatch>
+        <Input></Input>
+        <TextAreaAutoResize></TextAreaAutoResize>
+        <div className="p-5">
+          <Dropdown></Dropdown>
+        </div>
+        <TextAreaAutoResizeWithReducer></TextAreaAutoResizeWithReducer>
+
+        <div className="block text-center">HackerNewsWithHook</div>
+        <HackerNewsWithHook></HackerNewsWithHook>
+
+        <div>
+          <button
+            onClick={() => setShow(true)}
+            className="inline-block m-3 p-3 rounded-lg text-white bg-green-400"
+          >
+            Show menu
+          </button>
+          <SidebarMenu show={show} ref={nodeRef}></SidebarMenu>
+          <Dropdown></Dropdown>
+        </div>
+        <Form></Form>
       </div>
-    </div>
+    </>
   );
 }
 
