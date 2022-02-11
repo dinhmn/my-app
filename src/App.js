@@ -23,6 +23,7 @@ import StopWatch from "./components/StopWatch";
 import TextAreaAutoResize from "./components/TextAreaAutoResize";
 import TextAreaAutoResizeWithReducer from "./components/TextAreaAutoResizeWithReducer";
 import useClickOutSide from "./hooks/useClickOutSide";
+import MovieSearchApp from "./components/MovieSearchApp";
 // const theme = {
 //   colors: {
 //     blue: "#2979ff",
@@ -80,7 +81,7 @@ function App() {
         <TextAreaAutoResizeWithReducer></TextAreaAutoResizeWithReducer>
 
         <div className="block text-center">HackerNewsWithHook</div>
-        <HackerNewsWithHook></HackerNewsWithHook>
+        {/* <HackerNewsWithHook></HackerNewsWithHook> */}
 
         <div>
           <button
@@ -93,6 +94,9 @@ function App() {
           <Dropdown></Dropdown>
         </div>
         <Form></Form>
+        <>
+          <MovieSearchApp></MovieSearchApp>
+        </>
       </div>
     </>
   );
