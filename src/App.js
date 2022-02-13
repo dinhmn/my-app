@@ -17,13 +17,13 @@ import Form from "./components/form/Form";
 // import Counter from "./components/counter/Counter";
 // import Timer from "./components/Timer";
 // import Header from "./components/Header";
-import HackerNewsWithHook from "./components/news/HackerNewsWithHook";
 import SidebarMenu from "./components/SidebarMenu";
 import StopWatch from "./components/StopWatch";
 import TextAreaAutoResize from "./components/TextAreaAutoResize";
 import TextAreaAutoResizeWithReducer from "./components/TextAreaAutoResizeWithReducer";
 import useClickOutSide from "./hooks/useClickOutSide";
 import MovieSearchApp from "./components/MovieSearchApp";
+import SignUpFormFinal from "./components/form/SignUpFormFinal";
 // const theme = {
 //   colors: {
 //     blue: "#2979ff",
@@ -97,6 +97,7 @@ function App() {
         <>
           <MovieSearchApp></MovieSearchApp>
         </>
+        <SignUpFormFinal></SignUpFormFinal>
       </div>
     </>
   );
