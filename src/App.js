@@ -24,6 +24,7 @@ import TextAreaAutoResizeWithReducer from "./components/TextAreaAutoResizeWithRe
 import useClickOutSide from "./hooks/useClickOutSide";
 import MovieSearchApp from "./components/MovieSearchApp";
 import SignUpFormFinal from "./components/form/SignUpFormFinal";
+import SignUpFormWithHook from "./components/form/SignUpFormWithHook";
 // const theme = {
 //   colors: {
 //     blue: "#2979ff",
@@ -98,6 +99,7 @@ function App() {
           <MovieSearchApp></MovieSearchApp>
         </>
         <SignUpFormFinal></SignUpFormFinal>
+        <SignUpFormWithHook></SignUpFormWithHook>
       </div>
     </>
   );
