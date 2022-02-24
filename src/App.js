@@ -1,107 +1,69 @@
+import { useState } from "react";
 import "./App.css";
-import Dropdown from "./components/Dropdown";
-import Input from "./components/Input";
-import Form from "./components/form/Form";
-// import Card2 from "./components/card/Card2";
-// import CardList from "./components/card/CardList";
-// import { GlobalStyles } from "./GlobalStyles";
-// import Button from "./components/button/Button";
+import ModalAdvance from "./components/modal/ModalAdvance";
+import ModalBase from "./components/modal/ModalBase";
 
-// import YoutubeItem from "./components/youtube/YoutubeItem";
-// import Toggle from "./components/state/Toggle";
-// import Counter from "./components/counter/Counter";
-// import Game from "./components/tictactoe/Game";
-// import { ThemeProvider } from "styled-components";
-// import CardTailwind from "./components/card/CardTailwind";
-// import Photos from "./components/photo/Photos";
-// import Counter from "./components/counter/Counter";
-// import Timer from "./components/Timer";
-// import Header from "./components/Header";
-import SidebarMenu from "./components/SidebarMenu";
-import StopWatch from "./components/StopWatch";
-import TextAreaAutoResize from "./components/TextAreaAutoResize";
-import TextAreaAutoResizeWithReducer from "./components/TextAreaAutoResizeWithReducer";
-import useClickOutSide from "./hooks/useClickOutSide";
-import MovieSearchApp from "./components/MovieSearchApp";
-import SignUpFormFinal from "./components/form/SignUpFormFinal";
-import SignUpFormWithHook from "./components/form/SignUpFormWithHook";
-// const theme = {
-//   colors: {
-//     blue: "#2979ff",
-//   },
-// };
 function App() {
-  const { show, nodeRef, setShow } = useClickOutSide("button");
+  const [openModalBase, setOpenModalBase] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   return (
-    <>
-      <div>
-        {/* <ThemeProvider theme={theme}>
-    <GlobalStyles></GlobalStyles> */}
-        {/* <YoutubeItem
-      avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsDV5gcH88iuaHC7RmmY6tE3qebzUnHldcw&usqp=CAU"
-      image="https://superpower.vn/uploads/details/2021/06/images/43.jpg"
-      title="Learn ReactJS"
-      author="Easy"
-    />
-    <YoutubeItem
-      avatar="https://images.foody.vn/res/g103/1023259/prof/s576x330/foody-upload-api-foody-mobile-cafefddaqk-200514103514.jpg"
-      image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToLv3Rs05xlH_SlfPhMY7iZ7HVlziYuE8R6A&usqp=CAU"
-      title="Americano"
-      author="Coffee"
-    />
-    <YoutubeItem
-      avatar="https://simpleweb.vn/wp-content/uploads/2020/07/1522697270446.jpg"
-      image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSRt-qGly-tzApjQEtKjwKhunup0ReUEh76af2ehWJA8rAS4nzpEBoXJxuFtnGWFTrRI&usqp=CAU"
-      title="Who is this?"
-      author="Nam"
-    /> */}
-        {/* <Toggle />
-    <Counter /> */}
-        {/* <Game /> */}
-        {/* <Button>Primary</Button>
-    <Button secondary>Secondary</Button> */}
-        {/* <CardList>
-      <Card2></Card2>
-    </CardList>
-  </ThemeProvider> */}
-        {/* <CardList>
-      <CardTailwind></CardTailwind>
-    </CardList> */}
-        {/* <Photos></Photos> */}
-        {/* <Counter></Counter> */}
-        {/* <Timer></Timer> */}
-        {/* <Header></Header> */}
-        {/* <HackerNews></HackerNews> */}
-        {/* <HackerNewsWithReducer></HackerNewsWithReducer> */}
-        <StopWatch></StopWatch>
-        <Input></Input>
-        <TextAreaAutoResize></TextAreaAutoResize>
-        <div className="p-5">
-          <Dropdown></Dropdown>
+    <div className="p-5">
+      <button
+        className="p-5 rounded-lg text-white text-center bg-blue-400 "
+        onClick={() => setOpenModalBase(true)}
+      >
+        Open modal base
+      </button>
+      <button
+        className="p-5 rounded-lg text-white text-center bg-blue-400 mx-3"
+        onClick={() => setOpenModal(true)}
+      >
+        Open modal
+      </button>
+      <ModalBase
+        visible={openModalBase}
+        onClose={() => setOpenModalBase(false)}
+      >
+        <div className="bg-white p-10 rounded-lg">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
+          ducimus, amet at optio dolores doloremque facilis ratione quaerat
+          error, facere provident nobis non iste necessitatibus nihil dolorum
+          alias deleniti eos.
         </div>
-        <TextAreaAutoResizeWithReducer></TextAreaAutoResizeWithReducer>
-
-        <div className="block text-center">HackerNewsWithHook</div>
-        {/* <HackerNewsWithHook></HackerNewsWithHook> */}
-
-        <div>
-          <button
-            onClick={() => setShow(true)}
-            className="inline-block m-3 p-3 rounded-lg text-white bg-green-400"
-          >
-            Show menu
-          </button>
-          <SidebarMenu show={show} ref={nodeRef}></SidebarMenu>
-          <Dropdown></Dropdown>
+      </ModalBase>
+      <ModalAdvance
+        visible={openModal}
+        onClose={() => setOpenModal(false)}
+        header="Welcome Back!"
+        bodyClassName="w-full max-w-[400px]"
+      >
+        <div className="flex flex-col gap-3 mb-5">
+          <label htmlFor="email" className="text-sm cursor-pointer">
+            Email address
+          </label>
+          <input
+            type="email"
+            className="w-full text-sm leading-normal bg-[#E7ECF3] rounded-lg p-4"
+            placeholder="Enter your email"
+            id="email"
+          />
         </div>
-        <Form></Form>
-        <>
-          <MovieSearchApp></MovieSearchApp>
-        </>
-        <SignUpFormFinal></SignUpFormFinal>
-        <SignUpFormWithHook></SignUpFormWithHook>
-      </div>
-    </>
+        <div className="flex flex-col gap-3 mb-5">
+          <label htmlFor="password" className="text-sm cursor-pointer">
+            Password
+          </label>
+          <input
+            type="password"
+            className="w-full text-sm leading-normal bg-[#E7ECF3] rounded-lg p-4"
+            placeholder="Enter your email"
+            id="password"
+          />
+        </div>
+        <button className="w-full p-4 font-semibold text-base text-white bg-[#316BFF] rounded-lg">
+          Sign in
+        </button>
+      </ModalAdvance>
+    </div>
   );
 }
 

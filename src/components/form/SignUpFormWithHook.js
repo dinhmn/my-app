@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useController, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import axios from "axios";
@@ -20,6 +20,7 @@ const SignUpFormWithHook = () => {
     // dirtyFields: tra ra 1 obj về các trường khi có sự thay đổi
     // isDirty: trả ra true nếu chạm vào or thay đổi bất kì 1 trường nào đó
     // isValid:
+    control,
   } = useForm({
     resolver: yupResolver(schemaValidation),
     mode: "onChange",
@@ -87,14 +88,20 @@ const SignUpFormWithHook = () => {
       </div>
       <div className="flex flex-col gap-2 mb-4">
         <label htmlFor="email">Email address</label>
-        <input
+        <MyInput
+          name="email"
+          id="email"
+          placeholder="Enter your email address"
+          control={control}
+        ></MyInput>
+        {/* <input
           type="email"
           id="email"
           placeholder="Enter your email address"
           className="p-4 rounded-md border border-gray-100"
           // name, onChange, onBlur, value
           {...register("email")}
-        />
+        /> */}
       </div>
       <button
         type="submit"
@@ -110,4 +117,35 @@ const SignUpFormWithHook = () => {
   );
 };
 
+// const MyInput = ({ control, ...props }) => {
+//   return (
+//     <Controller
+//       name={props.name}
+//       control={control}
+//       defaultValue=""
+//       render={({ field }) => (
+//         <input
+//           className="p-4 rounded-md border border-gray-100"
+//           {...field}
+//           {...props}
+//         />
+//       )}
+//     ></Controller>
+//   );
+// };
+
+const MyInput = ({ control, ...props }) => {
+  const { field } = useController({
+    control,
+    name: props.name,
+    defaultValue: "",
+  });
+  return (
+    <input
+      className="p-4 rounded-md border border-gray-100"
+      {...field}
+      {...props}
+    />
+  );
+};
 export default SignUpFormWithHook;
