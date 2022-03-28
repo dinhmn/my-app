@@ -1,10 +1,16 @@
 import React from "react";
 import useHover from "../hooks/useHover";
 import useLinkNewTab from "../hooks/useLinkNewTab";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Blog = () => {
   const { contentRef } = useLinkNewTab();
   const { hovered, nodeRef } = useHover();
+
+  // Navigation
+  const { slug } = useParams();
+
+  const navigate = useNavigate();
   return (
     <div className="entry-content" ref={contentRef}>
       <p className="mb-5">
@@ -39,6 +45,12 @@ const Blog = () => {
         </a>{" "}
         error porro quidem nulla voluptatum tempore. Voluptate, saepe suscipit?
       </p>
+      <button
+        onClick={() => navigate("/blog")}
+        className="p-3 text-white bg-blue-500 rounded-sm"
+      >
+        Navigate to Blog Page
+      </button>
     </div>
   );
 };

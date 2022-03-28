@@ -42,25 +42,25 @@ const HackerNews = () => {
     handleFetchData.current();
   }, [query]);
   return (
-    <div className="bg-white mx-auto my-5 p-5 rounded-lg shadow-md w-2/4">
+    <div className="w-2/4 p-5 mx-auto my-5 bg-white rounded-lg shadow-md">
       <div className="flex mb-5 gap-x-5">
         <input
           type="text"
-          className="border border-gray-200 p-5 block w-full rounded-md  focus:border-blue-400 transition-all"
+          className="block w-full p-5 transition-all border border-gray-200 rounded-md focus:border-blue-400"
           placeholder="Typing your keyword ..."
           defaultValue={query}
           onChange={handleUpdateQuery}
           // onChange={(e) => setQuery(e.target.value)}
         />
-        <button className="bg-blue-500 text-white font-semibold p-5 rounded-md flex-shrink-0">
+        <button className="flex-shrink-0 p-5 font-semibold text-white bg-blue-500 rounded-md">
           Fetching
         </button>
       </div>
       {loading && (
-        <div className="loading w-8 h-8 rounded-full border-blue-500 border-4 border-r-4 border-r-transparent animate-spin mx-auto my-10"></div>
+        <div className="w-8 h-8 mx-auto my-10 border-4 border-r-4 border-blue-500 rounded-full loading border-r-transparent animate-spin"></div>
       )}
       {!loading && errorMessage && (
-        <p className="text-red-400 my-4">{errorMessage}</p>
+        <p className="my-4 text-red-400">{errorMessage}</p>
       )}
       <div className="flex flex-wrap gap-5">
         {!loading &&
