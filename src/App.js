@@ -1,19 +1,25 @@
+import React, { useCallback, useMemo, useState } from "react";
+
 import "./App.css";
-import FetchingData from "./components/advanced-react/hoc/FetchingData";
-import HandleValue from "./components/advanced-react/render-props/HandleValue";
-import Title from "./components/advanced-react/render-props/Title";
+import Count from "./components/advanced-react/performance/Count";
 
 function App() {
+  const [filter, setFilter] = useState("");
+  const caculate = useCallback(() => setFilter(""), [setFilter]);
+  const data = useMemo(
+    () => ({
+      success: false,
+    }),
+    []
+  );
   return (
     <div>
-      <FetchingData></FetchingData>
-      {/* <Title
-        render={() => {
-          return <h1>Hello from render props</h1>;
-        }}
-      ></Title> */}
-      <Title>{() => <h1>Hello from render props</h1>}</Title>
-      <HandleValue></HandleValue>
+      <input
+        type="text"
+        className="p-3 border border-gray-300 rounded"
+        onChange={(e) => setFilter(e.target.value)}
+      />
+      <Count caculate={caculate} data={data}></Count>
     </div>
   );
 }
