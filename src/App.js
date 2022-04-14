@@ -2,6 +2,8 @@ import React, { useCallback, useMemo, useState } from "react";
 
 import "./App.css";
 import Count from "./components/advanced-react/performance/Count";
+import FirebaseApp from "./firebase/FirebaseApp";
+import FirebaseAuth from "./firebase/FirebaseAuth";
 
 function App() {
   const [filter, setFilter] = useState("");
@@ -14,12 +16,13 @@ function App() {
   );
   return (
     <div>
-      <input
+      {/* <input
         type="text"
         className="p-3 border border-gray-300 rounded"
         onChange={(e) => setFilter(e.target.value)}
       />
-      <Count caculate={caculate} data={data}></Count>
+      <Count caculate={caculate} data={data}></Count> */}
+      <FirebaseAuth></FirebaseAuth>
     </div>
   );
 }
